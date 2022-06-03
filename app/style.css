@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Petemoss&family=Source+Sans+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin-top: 67px;
+}
+a {
+    color: rgb(0, 114, 245);
+}
+html {
+    --color-font: #333;
+    --color-border: rgb(170, 170, 170);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+pre {
+    font-family: 'Source Sans Pro', sans-serif;
+    white-space: pre-wrap;
+}
+/* inne */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-text {
+    text-align: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.poems {
+    gap: 50px;
+}
+
+.poems > .col {
+    max-width: 350px;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 15px;
+}
+h1 , h2 , h3 , h4 {
+    margin-bottom: 15px;
+}
+.navigation > .container > a {
+    text-decoration: none;
+}
+.navigation {
+    background: white;
+    color: var(--color-font);
+    border-bottom: 1px var(--color-border) solid;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+.modal {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.showModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.showModal > img {
+    animation: animationSizeImg 1s forwards;
+}
+.showModal > button {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px var(--color-border) solid;
+    border-radius: 25px;
+    font-size: 1.3rem;
+}
+@keyframes animationSizeImg {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 80%;
+    }
+}
+
+/* navbar */
+@media only screen and (max-width: 1200px) {
+    .showModal > img {
+        width: 95%;
+        height: auto;
+        max-height: 200px;
+    }
+    nav > .menu{
+        width: 100%;
+        display: none;
+    }
+    .menu > a {
+        width: 100%;
+    }
+    nav > .title {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .toggler {
+        display: block;
+    }
+    .row {
+        padding: 15px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .toggler {
+        display: none;
+    }
+}
+.toggler {
+    border: none;
+    background: none;
+    font-size: 2.3rem;
+}
+nav {
+    background: rgb(224, 224, 224);
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    flex-wrap: wrap;
+}
+nav > .title {
+    font-size: 2.6rem;
+    color: var(--color-font);
+    padding: 10px;
+    font-family: 'Petemoss', cursive;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu > a:first-child {
+    border-left: 1px var(--color-border) solid;
+}
+.menu > a:hover {
+    background-color: var(--color-border);
+}
+.menu > a {
+    padding: 20px;
+    border-right: 1px var(--color-border) solid;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--color-font);
+    transition: background-color .4s;
+}
+
+/*gallery*/
+.gallery {
+    margin-top: 50px;
+    gap: 30px;
+    align-items: center;
+}
+.gallery > a > img {
+    filter: brightness(0.5)
+}
+.gallery > a {
+    position: relative;
+    transition: box-shadow, transform .3s;
+}
+.gallery > a > p {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7rem;
+    color: white;
+}
+.galeryImage:hover, .gallery > a:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px 2px var(--color-font);
+}
+.galeryImage {
+    transition: box-shadow, transform .3s;
+    width: 100%;
+    max-width: 360px;
+    min-width: 360px;
+    box-shadow: 0px 0px 8px 0px black;
+    max-height: 220px;
+    object-fit: cover;
+}
+/* site index */
+.pub > .col {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px var(--color-border) solid;
+}
+.card > img {
+    width: 100%;
+    margin-right: 30px;
+    max-width: 300px;
+    box-shadow: 0px 0px 8px 0px black;
+    margin-bottom: 20px;
+}
+.card > div {
+    max-width: 400px;
+}
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 50px 30px 50px 30px;
+    border-bottom: 1px var(--color-border) solid;
+}
+.poems > .col > .footer {
+    text-align: right;
+    margin: 10px;
+    font-style: italic;
+}
+.centerbutton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.centerbutton > button:hover {
+    cursor: pointer;
+    background: rgb(170, 170, 170);
+}
+.centerbutton > button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin: 10px;
+    color: var(--color-font);
+    border: 2px solid var(--color-font);
+    transition: background-color .4s;
+}
+/* slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 90vh;
+    width: 100%;
+    box-shadow: 0px 5px 15px 0px var(--color-font);
+  }
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.6s ease-in-out;
+
+}
+.slide.current {
+    opacity: 1;
+}
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 35px;
+    font-size: 1.2rem;
+}
+.slide .content h1 {
+    margin-bottom: 10px;
+}
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 1.5s ease-in-out 0.9s;
+}
+.buttons button#next {
+    position: absolute;
+    top: 40%;
+    right: 15px;
+}
+.buttons button#prev {
+    position: absolute;
+    top: 40%;
+    left: 15px;
+}
+.buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+}
+.buttons button:hover {
+    background-color: #fff;
+    color: #333;
+}
+@media (max-width: 500px) {
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+
+    .slide.current .content {
+        transform: translateY(-300px);
+    }
+}
+.slide:first-child {
+    background: url('images/jumbo1.jpg') no-repeat
+    center top/cover;
+    background-attachment: fixed;
+}
+.slide:nth-child(2) {
+    background: url('images/jumbo2.jpg') no-repeat
+    center top/cover;
+    background-attachment: fixed;
+}
+.slide:nth-child(3) {
+    background: url('images/jumbo3.jpg') no-repeat
+    center top/cover;
+    background-attachment: fixed;
+}
+.slide:nth-child(4) {
+    background: url('images/jumbo4.jpg') no-repeat
+    center top/cover;
+    background-attachment: fixed;
+}
+.article {
+    margin-top: 100px;
+}
+/* footer */
+footer {
+    margin-top: 20px;
+}
+footer::before {
+    content: "";
+    width: 100%;
+    height: 100px;
+    display: block;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    background: rgb(224, 224, 224);
+}
+footer::after {
+    content: "";
+    width: 100%;
+    height: 100px;
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    background: rgb(185, 185, 185);
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+}
+footer > .up {
+    background-color: rgb(170, 170, 170);
+    padding: 20px;
+    font-size: 1.1rem;
+}
+footer > .down {
+    text-align: center;
+    background-color: rgb(224, 224, 224);
+    padding: 10px;
+}
+footer > .up > .container > .row > .col > h3 {
+    margin-bottom: 10px;
+}
+footer > .up > .container > .row > .col > li > a {
+    text-decoration: none;
+    color: black;
+}
+/* article */
+.articleInNews, .biography {
+    margin-top: 50px;
+}
+.articleInNews > img {
+    display: block;
+    margin: 10px;
+}
+.articleInNews > .row > .col, .biography > pre > .row > .col {
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.articles {
+    margin-top: 50px;
+    font-size: 1.1rem;
+    flex-direction: column;
+}
+.articles > .col {
+    width: 100%;
+    border-bottom: 1px var(--color-border) solid;
+    padding: 30px;
+    text-align: justify;
+}
+.biography > pre {
+    text-align: justify;
+}
